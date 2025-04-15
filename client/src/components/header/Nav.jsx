@@ -3,17 +3,17 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Телефони', href: '#' },
-  { name: 'Аксесоари', href: '#' },
-  { name: 'Оферти', href: '#' },
-  { name: 'Контакти', href: '#' },
+  { name: 'Product', href: '#' },
+  { name: 'Features', href: '#' },
+  { name: 'Marketplace', href: '#' },
+  { name: 'Company', href: '#' },
 ]
 
-export default function Header() {
+export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 text-white min-h-screen flex flex-col">
+   
       <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between px-6 py-4 lg:px-12" aria-label="Global">
           <div className="flex lg:flex-1 items-center gap-2">
@@ -69,28 +69,5 @@ export default function Header() {
         </Dialog>
       </header>
 
-      {/* Hero section */}
-      <main className="flex-grow flex items-center justify-center px-6 lg:px-12 pt-32 pb-20">
-        <div className="max-w-2xl text-center">
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-cyan-400">
-            Открий най-новите смартфони
-          </h1>
-          <p className="mt-6 text-lg text-slate-200">
-            Голям избор от телефони, аксесоари и страхотни оферти. Подготвили сме нещо специално за теб!
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-4">
-            <a
-              href="#"
-              className="rounded-md bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-cyan-400 transition"
-            >
-              Разгледай офертите
-            </a>
-            <a href="#" className="text-sm font-medium text-white hover:text-cyan-400">
-              Научи повече →
-            </a>
-          </div>
-        </div>
-      </main>
-    </div>
   )
 }
