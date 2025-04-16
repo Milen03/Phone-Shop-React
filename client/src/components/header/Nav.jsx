@@ -3,10 +3,12 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'Catalog', href: '#' },
+  { name: 'My Profils', href: '#' },
+  { name: 'Login', href: '#' },
+  { name: 'Register', href: '#' },
+  { name: 'Logout', href: '#' },
 ]
 
 export default function Nav() {
