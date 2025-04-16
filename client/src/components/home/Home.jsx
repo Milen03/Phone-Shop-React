@@ -19,9 +19,7 @@ export default function Home() {
             >
               Check out the offers
             </a>
-            <a href="#" className="text-sm font-medium hover:text-cyan-400">
-              Learn more →
-            </a>
+           
           </div>
         </div>
       </main>

@@ -3,7 +3,7 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Product', href: '#' },
+  { name: 'Home', href: '#' },
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
@@ -18,7 +18,7 @@ export default function Nav() {
         <nav className="flex items-center justify-between px-6 py-4 lg:px-12" aria-label="Global">
           <div className="flex lg:flex-1 items-center gap-2">
             <DevicePhoneMobileIcon className="w-6 h-6 text-cyan-400" />
-            <span className="text-lg font-bold text-white">PhoneHub</span>
+            <span className="text-lg font-bold text-white">Phone Shop</span>
           </div>
           <div className="flex lg:hidden">
             <button
