@@ -6,14 +6,20 @@ import Home from './components/home/Home.jsx'
 import Login from './components/login/Login.jsx'
 import Register from './components/register/Register.jsx'
 import { UserContext } from './context/userContext.js'
+import usePersistedState from './hooks/usePersistedState.js'
 
 
 function App() {
+  const [authData,setAuthData] = usePersistedState('auth',{})
+
+  const userLoginHandeler = (resultData) =>{
+    setAuthData(resultData)
+  }
   
   return (
 
   <div className=" bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 text-white min-h-screen flex flex-col">
-     <UserContext.Provider value={{}}> {/* //authData */}
+     <UserContext.Provider value={{...authData,userLoginHandeler}}> 
       <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
