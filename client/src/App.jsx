@@ -15,11 +15,15 @@ function App() {
   const userLoginHandeler = (resultData) =>{
     setAuthData(resultData)
   }
+
+  const userLogoutHandeler = () =>{
+    setAuthData({})
+  }
   
   return (
 
   <div className=" bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 text-white min-h-screen flex flex-col">
-     <UserContext.Provider value={{...authData,userLoginHandeler}}> 
+     <UserContext.Provider value={{...authData,userLoginHandeler,userLogoutHandeler}}> 
       <Nav />
         <Routes>
           <Route path="/" element={<Home />} />

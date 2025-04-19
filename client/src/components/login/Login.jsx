@@ -1,6 +1,26 @@
-import { Link } from "react-router";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router";
+import { UserContext } from "../../context/userContext.js";
+import { useLogin } from "../../api/authApi.js";
+
 
 export default function Login(){
+ const navigation = useNavigate()
+ const { userLoginHandeler } = useContext(UserContext)
+ const { login } = useLogin()
+
+ const loginHandler = async (formData) => {
+const values = Object.fromEntries(formData)
+
+const authData = await login(values.email,values.password)
+
+userLoginHandeler(authData)
+
+navigation('/phone/catalog')
+
+return values
+
+ }
 
 
     return  (
@@ -15,7 +35,7 @@ export default function Login(){
             </div>
     
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-              <form action="#" method="POST" className="space-y-6">
+              <form action={loginHandler} className="space-y-6">
                 <div>
                   <label htmlFor="email" className="block text-sm/6 font-medium text-white">
                     Email address

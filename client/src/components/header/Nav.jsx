@@ -5,11 +5,11 @@ import { Bars3Icon, XMarkIcon, DevicePhoneMobileIcon } from '@heroicons/react/24
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Catalog', href: '#' },
+  { name: 'Catalog', href: '/phone/catalog' },
   { name: 'My Profils', href: '#' },
   { name: 'Login', href: '/phone/login' },
   { name: 'Register', href: '/phone/register' },
-  { name: 'Logout', href: '#' },
+  { name: 'Logout', href: '/phone/logout' },
 ]
 
 export default function Nav() {
