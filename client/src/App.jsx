@@ -7,6 +7,9 @@ import Login from './components/login/Login.jsx'
 import Register from './components/register/Register.jsx'
 import { UserContext } from './context/userContext.js'
 import usePersistedState from './hooks/usePersistedState.js'
+import Logout from './components/logout/Logout.jsx'
+import Create from './components/create/Create.jsx'
+import Catalog from './components/catalog/Catalog.jsx'
 
 
 function App() {
@@ -29,6 +32,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/phone/login" element={<Login />} />
           <Route path="/phone/register" element={<Register />} />
+          <Route path="/phone/logout" element={<Logout />} />
+          <Route path="/phone/create" element={<Create />} />
+          <Route path="/phone/catalog" element={<Catalog />} />
         </Routes>
         </UserContext.Provider>
    </div>

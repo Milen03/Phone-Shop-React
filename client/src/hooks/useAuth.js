@@ -8,9 +8,9 @@ export default function useAuth(){
     const requestWrapper = (method,url,data,options={})=>{
         const optionWrapper ={
             ...options,
-            header:{
+            headers:{
                 'X-Authorization':authData.accessToken,
-                 ...option.headers
+                 ...options.headers
             }
         }
 

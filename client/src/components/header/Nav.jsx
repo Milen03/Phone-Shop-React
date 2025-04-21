@@ -6,6 +6,7 @@ import { Bars3Icon, XMarkIcon, DevicePhoneMobileIcon } from '@heroicons/react/24
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Catalog', href: '/phone/catalog' },
+  { name: 'Create', href: '/phone/create' },
   { name: 'My Profils', href: '#' },
   { name: 'Login', href: '/phone/login' },
   { name: 'Register', href: '/phone/register' },
