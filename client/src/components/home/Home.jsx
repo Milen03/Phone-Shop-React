@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 
 export default function Home() {
 
@@ -13,12 +14,12 @@ export default function Home() {
             A wide selection of phones, accessories and great offers. We have prepared something special for you!
           </p>
           <div className="mt-10 flex items-center justify-center gap-4">
-            <a
-              href="#"
+            <Link
+              to={`/phone/catalog`}
               className="rounded-md bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-cyan-400 transition"
             >
               Check out the offers
-            </a>
+            </Link>
            
           </div>
         </div>

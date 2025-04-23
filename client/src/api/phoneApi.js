@@ -40,3 +40,17 @@ export const usePhones = () => {
         phone
     }
 }
+
+export const usePhone = (phoneId) =>{
+const [phone,setPhone] = useState({})
+
+useEffect(()=>{
+    request.get(`${baseUrl}/${phoneId}`)
+    .then(setPhone)
+
+},[phoneId])
+
+return{
+    phone
+}
+}

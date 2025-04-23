@@ -77,6 +77,19 @@ const submitAction = async (fromData) =>{
                          </div>
                      </div>
 
+                     <div className="sm:col-span-3">
+                         <label htmlFor="price" className="block text-sm font-medium text-white">
+                         Internal memory:
+                         </label>
+                         <div className="mt-2">
+                             <input
+                                 id="price"
+                                 name="price"
+                                 type="number"
+                                 className="block w-[400px] rounded-md bg-gray-900 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-600 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+                             />
+                         </div>
+                     </div>
 
                      <div className="sm:col-span-3">
                          <label htmlFor="Operating-system" className="block text-sm font-medium text-white">

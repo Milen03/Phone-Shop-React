@@ -50,7 +50,6 @@ export const useLogout = () =>{
         const option = {
             headers: {
                 'X-Authorization': accessToken,
-                ...option.headers
             }    
         }
         request.get(`${baseUrl}/logout`,null,option)
