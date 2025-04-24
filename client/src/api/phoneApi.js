@@ -54,3 +54,17 @@ return{
     phone
 }
 }
+
+
+export const useDelete = ()=>{
+    const {request} = useAuth()
+
+    const deletePhone = (phoneId) =>{
+        request.delete(`${baseUrl}/${phoneId}`)
+    }
+
+    return{
+
+        deletePhone
+    }
+}

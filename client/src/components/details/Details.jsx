@@ -2,10 +2,8 @@
 
 import { useState } from 'react'
 import { Link, useNavigate, useParams } from "react-router"
-import { StarIcon } from '@heroicons/react/20/solid'
-import { Radio, RadioGroup } from '@headlessui/react'
 import useAuth from "../../hooks/useAuth.js"
-import { usePhone } from '../../api/phoneApi.js'
+import { useDelete, usePhone } from '../../api/phoneApi.js'
 
 
 
@@ -15,6 +13,19 @@ export default function Details() {
   const { email, _id: userId, accessToken } = useAuth()
   const { phoneId } = useParams()
   const { phone } = usePhone(phoneId)
+  const { deletePhone } = useDelete()
+
+  const phoneDeleteHendeler = async () =>{
+    const hasConfirm = confirm(`Are you sure you want to delete ${phone.brand} Car?`)
+
+    if(!hasConfirm){
+      return
+    }
+
+    await deletePhone(phoneId)
+
+    navigation('/phone/catalog')
+  }
 
   const isOwner = userId === phone._ownerId
 
@@ -64,7 +75,7 @@ export default function Details() {
 
                 <button
                   type="button"
-                  onClick='#'
+                  onClick={phoneDeleteHendeler}
                   className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
                 >
                   Delete
@@ -85,7 +96,9 @@ export default function Details() {
               <ul role="list" className="list-disc space-y-2 pl-4 text-sm text-gray-300">
                 <li>Memory: {phone.memory} GB</li>
                 <li>Operating-system: {phone['Operating-system']}</li>
-                <li>Operating-system: {phone.memory}</li>
+                <li>RAM: {phone.ram} GB</li>
+                <li>Color: {phone.color}</li>
+
               </ul>
             </div>
           </div>
