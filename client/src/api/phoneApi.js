@@ -41,30 +41,46 @@ export const usePhones = () => {
     }
 }
 
-export const usePhone = (phoneId) =>{
-const [phone,setPhone] = useState({})
+export const usePhone = (phoneId) => {
+    const [phone, setPhone] = useState({})
 
-useEffect(()=>{
-    request.get(`${baseUrl}/${phoneId}`)
-    .then(setPhone)
+    useEffect(() => {
+        request.get(`${baseUrl}/${phoneId}`)
+            .then(setPhone)
 
-},[phoneId])
+    }, [phoneId])
 
-return{
-    phone
+    return {
+        phone
+    }
 }
-}
 
 
-export const useDelete = ()=>{
-    const {request} = useAuth()
+export const useDelete = () => {
+    const { request } = useAuth()
 
-    const deletePhone = (phoneId) =>{
+    const deletePhone = (phoneId) => {
         request.delete(`${baseUrl}/${phoneId}`)
     }
 
-    return{
+    return {
 
         deletePhone
+    }
+}
+
+export const useEditPhone = () => {
+    const { request } = useAuth()
+
+    const edit = async (phoneId, phoneData) => {
+        try {
+            return await request.put(`${baseUrl}/${phoneId}`, { ...phoneData, _id: phoneId })
+        } catch (err) {
+            alert("Phone update failed: " + error.message);
+        }
+    }
+
+    return {
+        edit
     }
 }
