@@ -22,7 +22,7 @@ export default function Nav() {
     { name: 'Home', href: '/' },
     { name: 'Catalog', href: '/phone/catalog' },
     { name: 'Create', href: '/phone/create' },
-    { name: 'My Profils', href: '#' },
+    { name: 'My-Profils', href: '/phone/my-profil' },
     { name: 'Logout', href: '/phone/logout' },
   ]
 
@@ -78,7 +78,7 @@ export default function Nav() {
                   {item.name}
                 </a>
               ))}
-             
+            
             </div>
           </DialogPanel>
         </Dialog>

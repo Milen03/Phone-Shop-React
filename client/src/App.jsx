@@ -14,6 +14,7 @@ import Details from './components/details/Details.jsx'
 import Edit from './components/edit/Edit.jsx'
 import GuestGuard from './components/guards/guestGuard.jsx'
 import AuthGuard from './components/guards/Authguard.jsx'
+import MyProfile from './components/my-profil/MyProfil.jsx'
 
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/phone/catalog" element={<Catalog />} />
           <Route path="/phone/:phoneId/details" element={<Details />} />
-          
+
           <Route element={<GuestGuard />}>
             <Route path="/phone/login" element={<Login />} />
             <Route path="/phone/register" element={<Register />} />
@@ -46,6 +47,7 @@ function App() {
             <Route path="/phone/logout" element={<Logout />} />
             <Route path="/phone/create" element={<Create />} />
             <Route path="/phone/:phoneId/edit" element={<Edit />} />
+            <Route path='/phone/my-profil' element={<MyProfile/>}/>
           </Route>
         </Routes>
       </UserContext.Provider>
