@@ -1346,6 +1346,57 @@
     	}
     };
     var seedData = {
+        phone: {
+            "phone-1":{
+                brand: "Apple",
+                model: "iPhone 16e",
+                color: "Black",
+                price: "1499",
+                memory: "128",
+                ram: "8",
+                "Operating-system": "iOS",
+                imageUrl: "https://s13emagst.akamaized.net/products/86496/86495227/images/res_502bd68a81c5240a92c811e8797db6af.jpg?width=720&height=720&hash=1E5A4A429B8B2F291930C0B87BB83725",
+                phoneNumber: "0877216068",
+                address: "Konstatin Panica",
+                about: "eMAG.bg полага постоянни усилия да съхрани точната информация от тази страница. Рядко има съдържание с неточности – снимката е с информативен характер и може да съдържа аксесоари, които не са включени в стандартния пакет; някои от спецификациите или цените могат да бъдат променени от производителя без предизвестие или могат да съдържат експлоатационни грешки. Всички промоции, предлагани в сайта, се предлагат до изчерпване на количествата.",
+                _id: "75df216f-4389-4d54-9175-01014d4ac644",
+                _createdOn: 1745512967282,
+                _updatedOn: 1745767751203,
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc"
+            },
+            "phone-2":{
+                _ownerId: "09c9c433-8ea6-4704-a65d-f0dfc6df3dee",
+                brand: "Samsung",
+                model: "GALAXY S25",
+                color: "Black",
+                price: "1579",
+                memory: "128",
+                ram: "12",
+                "Operating-system": "android",
+                imageUrl: "https://api.technopolis.bg/medias/Product-details-main-506387.jpg?context=bWFzdGVyfHJvb3R8MTgxMTgxfGltYWdlL2pwZWd8YUROaUwyaG1ZUzgwTlRVM05UY3hOVGd4TlRRMU5DOVFjbTlrZFdOMExXUmxkR0ZwYkhNdGJXRnBibDgxTURZek9EY3VhbkJufDcyYzhlMmU4ZWM4MjQ0NTE1MmE3ZmQ1N2M5ZWYxZjMzMjg1NzNiMzdiMWZlMWNmN2RkNDY5MjA4OTdiNDFhODM",
+                phoneNumber: "0877216068",
+                address: "София Дружда 4",
+                about: "Test",
+                _createdOn: 1745770330605,
+                _id: "6a434530-8a1e-45fb-9945-b248f3ce0589"
+            },
+            "phone-3":{
+                _ownerId: "61dc3384-9c91-48a2-8f5f-d79fb73dcbc4",
+                brand: "Apple",
+                model: "IPHONE 16",
+                color: "Black",
+                price: "1699",
+                memory: "128",
+                ram: "8",
+                "Operating-system": "iOS",
+                imageUrl: "https://api.technopolis.bg/medias/Product-details-main-505144.jpg?context=bWFzdGVyfHJvb3R8MTkyNzk1fGltYWdlL2pwZWd8YURVM0wyaGhOQzh6TlRFMk5UVXhNelkzT0RnM09DOVFjbTlrZFdOMExXUmxkR0ZwYkhNdGJXRnBibDgxTURVeE5EUXVhbkJufDE1NzQ1YjQ2MTFjZjgzM2RlMTY3YjliMzcwOGU1ZTY4NWQ3MGUwZmZlZTkyZjIyZWQ2MjRkYjQ0NmI4NmFiYTY",
+                phoneNumber: "0877216068",
+                address: "bul.bulgaria ",
+                about: "asdasfdghsfhgdf",
+                _createdOn: 1745770453370,
+                _id: "e670008b-f52f-4c08-b606-ae0e943ddf28"
+            },
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
