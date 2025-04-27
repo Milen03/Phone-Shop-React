@@ -1,20 +1,33 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline'
+import { UserContext } from '../../context/userContext.js'
 
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Catalog', href: '/phone/catalog' },
-  { name: 'Create', href: '/phone/create' },
-  { name: 'My Profils', href: '#' },
-  { name: 'Login', href: '/phone/login' },
-  { name: 'Register', href: '/phone/register' },
-  { name: 'Logout', href: '/phone/logout' },
-]
+
 
 export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { email } = useContext(UserContext)
+
+
+  const guestNav = [
+    { name: 'Home', href: '/' },
+    { name: 'Catalog', href: '/phone/catalog' },
+    { name: 'Login', href: '/phone/login' },
+    { name: 'Register', href: '/phone/register' },
+  ]
+  
+  const userNav =[
+    { name: 'Home', href: '/' },
+    { name: 'Catalog', href: '/phone/catalog' },
+    { name: 'Create', href: '/phone/create' },
+    { name: 'My Profils', href: '#' },
+    { name: 'Logout', href: '/phone/logout' },
+  ]
+
+  
+  const navItems = email ? userNav : guestNav 
 
   return (
    
@@ -37,16 +50,14 @@ export default function Nav() {
             </button>
           </div>
           <div className="hidden lg:flex gap-x-10">
-            {navigation.map((item) => (
+            {navItems.map((item) => (
               <a key={item.name} href={item.href} className="text-sm font-medium hover:text-cyan-400">
                 {item.name}
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 justify-end">
-            <a href="#" className="text-sm font-semibold hover:text-cyan-400">
-              Вход →
-            </a>
+          {email}
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -62,14 +73,12 @@ export default function Nav() {
               </button>
             </div>
             <div className="mt-6 space-y-4">
-              {navigation.map((item) => (
+              {navItems.map((item) => (
                 <a key={item.name} href={item.href} className="block text-base font-medium text-white hover:text-cyan-400">
                   {item.name}
                 </a>
               ))}
-              <a href="#" className="block text-base font-semibold text-white hover:text-cyan-400">
-                Вход
-              </a>
+             
             </div>
           </DialogPanel>
         </Dialog>
