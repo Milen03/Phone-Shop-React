@@ -11,12 +11,16 @@ export default function Login(){
 
  const loginHandler = async (formData) => {
 const values = Object.fromEntries(formData)
+try{
+  const authData = await login(values.email,values.password)
 
-const authData = await login(values.email,values.password)
-
-userLoginHandeler(authData)
-
-navigation('/phone/catalog')
+  userLoginHandeler(authData)
+  
+  navigation('/phone/catalog')
+  
+}catch(err){
+alert(err.message && 'Login or password don t match')
+}
 
 return values
 
