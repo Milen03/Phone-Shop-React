@@ -15,6 +15,7 @@ import Edit from './components/edit/Edit.jsx'
 import GuestGuard from './components/guards/guestGuard.jsx'
 import AuthGuard from './components/guards/Authguard.jsx'
 import MyProfile from './components/my-profil/MyProfil.jsx'
+import Footer from './components/footer/Footer.jsx'
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
             <Route path='/phone/my-profil' element={<MyProfile/>}/>
           </Route>
         </Routes>
+        <Footer/>
       </UserContext.Provider>
     </div>
 

@@ -27,7 +27,7 @@ export default function MyProfileItem({
                     </h3>
                     <p className="mt-1 text-sm text-gray-400">{model}</p>
                   </div>
-                  <p className="text-sm font-medium text-gray-100">{price}</p>
+                  <p className="text-sm font-medium text-gray-100">{price} LV</p>
                 </div>
               </div>
         </>
