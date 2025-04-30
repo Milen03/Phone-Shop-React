@@ -16,6 +16,7 @@ import GuestGuard from './components/guards/guestGuard.jsx'
 import AuthGuard from './components/guards/Authguard.jsx'
 import MyProfile from './components/my-profil/MyProfil.jsx'
 import Footer from './components/footer/Footer.jsx'
+import Page404 from './components/404page/404Page.jsx'
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
       <UserContext.Provider value={{ ...authData, userLoginHandeler, userLogoutHandeler }}>
         <Nav />
         <Routes>
+          <Route path='*' element={<Page404/>}/>
           <Route path="/" element={<Home />} />
           <Route path="/phone/catalog" element={<Catalog />} />
           <Route path="/phone/:phoneId/details" element={<Details />} />

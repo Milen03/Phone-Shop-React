@@ -137,10 +137,7 @@ if(!phoneData.brand||!phoneData.model||!phoneData.color||!phoneData.price||phone
                                  <option>android</option>
 
                              </select>
-                             <ChevronDownIcon
-                                 aria-hidden="true"
-                                 className="pointer-events-none col-start-1 row-start-1 mr-2 w-5 h-5 self-center justify-self-end text-gray-500 sm:w-4 sm:h-4"
-                             />
+                             
                          </div>
                      </div>
 
