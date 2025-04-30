@@ -63,7 +63,7 @@ export default function Nav() {
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-slate-800 px-6 py-6 sm:ring-1 sm:ring-white/10">
             <div className="flex items-center justify-between">
-              <span className="text-white text-lg font-bold">PhoneHub</span>
+              <span className="text-white text-lg font-bold">Phone Shop</span>
               <button
                 type="button"
                 className="p-2 text-white hover:bg-slate-700 rounded"
@@ -75,10 +75,10 @@ export default function Nav() {
             <div className="mt-6 space-y-4">
               {navItems.map((item) => (
                 <a key={item.name} href={item.href} className="block text-base font-medium text-white hover:text-cyan-400">
-                  {item.name}
+                  {item.name} 
                 </a>
               ))}
-            
+              <p className='block text-base font-medium text-white hover:text-cyan-400'>{email}</p>
             </div>
           </DialogPanel>
         </Dialog>
