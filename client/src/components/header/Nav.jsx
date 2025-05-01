@@ -57,12 +57,13 @@ export default function Nav() {
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 justify-end">
-          <div className="relative flex items-center">
+         <div className="hidden lg:flex lg:flex-1 justify-end">
+          {email && <div className="relative flex items-center">
             <FaRegUserCircle className="w-6 h-6 text-white -ml-8" />
-          </div>
+          </div>}
           {email}
         </div>
+       
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-slate-800 px-6 py-6 sm:ring-1 sm:ring-white/10">

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Link, useNavigate, useParams } from "react-router"
 import useAuth from "../../hooks/useAuth.js"
 import { useDelete, usePhone } from '../../api/phoneApi.js'
+import { useLike } from '../../api/likeApi.js'
 
 
 
@@ -26,6 +27,8 @@ export default function Details() {
 
     navigation('/phone/catalog')
   }
+  const { likesCount, liked, addLike } = useLike (phoneId, userId, accessToken);
+
 
   const isOwner = userId === phone._ownerId
 
@@ -70,6 +73,23 @@ export default function Details() {
               </button>
             </>
           )}
+
+<h1>Likes: {likesCount}</h1>
+              {email && (
+                <>
+                  
+                  {!isOwner && !liked && (
+                    <button
+                      type="button"
+                      onClick={addLike}
+                      className="mt-10 flex w-full items-center justify-center rounded-md bg-cyan-500 px-8 py-3 text-base font-medium text-white hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    >
+                      Like
+                    </button>
+                  )}
+                  {liked && <p>You have liked this phone</p>}
+                </>
+              )}
         </form>
       </div>
 

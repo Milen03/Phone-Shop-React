@@ -1,0 +1,42 @@
+import { useEffect, useState } from "react"
+import request from "../utils/request.js"
+
+const baseUrl = `http://localhost:3030/data/likes`
+
+export const useLike = (phoneId,userId,accessToken) =>{
+    const [likes,setLikes] = useState([])
+    const[liked,setLiked] = useState(false)
+
+    const fetchLikes = () => {
+        request.get(`${baseUrl}?where=phoneId%3D%22${phoneId}%22`)
+            .then((data) => {
+                setLikes(data);
+                setLiked(data.some((like) => like._ownerId === userId));
+            })
+            .catch(console.error);
+    };
+
+    useEffect(fetchLikes, [phoneId, userId]);
+
+    const addLike = async () => {
+        if (!liked) {
+            try {
+                const newLike = await request.post(baseUrl, { phoneId }, {
+                    headers: { "Content-Type": "application/json", 
+                      "X-Authorization": accessToken }
+                });
+                setLikes([...likes, newLike]);
+                setLiked(true);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    };
+
+    return { 
+        likesCount: likes.length, 
+        liked, 
+        addLike,
+        likes
+      };
+}
