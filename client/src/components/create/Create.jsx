@@ -11,7 +11,7 @@ const { create } = useCreateCar()
 const submitAction = async (fromData) =>{
     const phoneData = Object.fromEntries(fromData)
 
-if(!phoneData.brand||!phoneData.model||!phoneData.color||!phoneData.price||phoneData.memory||phoneData.ram||!phoneData['Operating-system']||!phoneData.imageUrl||!phoneData.phoneNumber||phoneData.address||!phoneData.about){
+if(!phoneData.brand||!phoneData.model||!phoneData.color||!phoneData.price||!phoneData.memory||!phoneData.ram||!phoneData['Operating-system']||!phoneData.imageUrl||!phoneData.phoneNumber||!phoneData.address||!phoneData.about){
     alert("Please fill in all fields before submitting.");
     return;
 }

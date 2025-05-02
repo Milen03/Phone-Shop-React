@@ -29,7 +29,7 @@ export const useCreateCar = () => {
 
 
 export const usePhones = () => {
-    const [phone, setPhone] = useState([])
+    const [phones, setPhone] = useState([])
 
     useEffect(() => {
         request.get(baseUrl)
@@ -37,7 +37,7 @@ export const usePhones = () => {
     }, [])
 
     return {
-        phone
+        phones
     }
 }
 

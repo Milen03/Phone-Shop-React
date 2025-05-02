@@ -5,16 +5,16 @@ import CatalogItem from "./catalogItem/CatalogIdtem.jsx"
 
 
 export default function Catalog() {
-    const { phone } = usePhones()
+    const { phones } = usePhones()
     const [query,setQuery] = useState('')
 
     const filteredPhone = query
-    ? phone.filter((phone)=>
+    ? phones.filter((phone)=>
     phone.brand.toLowerCase().includes(query.toLowerCase())
        )
-       :phone
+       :phones
 
-    if (!phone.length) {
+    if (!phones.length) {
         return <p className="text-white text-center mt-10">No cars available. </p>
     }
     return (
