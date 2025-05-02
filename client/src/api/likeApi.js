@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react"
 import request from "../utils/request.js"
+import { useParams } from "react-router";
+import useAuth from "../hooks/useAuth.js";
 
 const baseUrl = `http://localhost:3030/data/likes`
 
 export const useLike = (phoneId,userId,accessToken) =>{
+
     const [likes,setLikes] = useState([])
     const[liked,setLiked] = useState(false)
+
+    
 
     const fetchLikes = () => {
         request.get(`${baseUrl}?where=phoneId%3D%22${phoneId}%22`)
@@ -33,6 +38,7 @@ export const useLike = (phoneId,userId,accessToken) =>{
         }
     };
 
+
     return { 
         likesCount: likes.length, 
         liked, 
@@ -40,3 +46,19 @@ export const useLike = (phoneId,userId,accessToken) =>{
         likes
       };
 }
+
+export function useLikesByUser(userId) {
+    const [likes, setLikes] = useState([]);
+
+    const { request } = useAuth()
+  
+    useEffect(() => {
+      if (!userId) return;
+      request.get(
+        `${baseUrl}?where=_ownerId%3D%22${userId}%22`)
+      .then(setLikes)
+      .catch(console.error);
+    }, [userId]);
+  
+    return { likes };
+  }
