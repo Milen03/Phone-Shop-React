@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import request from "../utils/request.js"
-import { useParams } from "react-router";
 import useAuth from "../hooks/useAuth.js";
 
 const baseUrl = `http://localhost:3030/data/likes`
@@ -43,7 +42,6 @@ export const useLike = (phoneId,userId,accessToken) =>{
         likesCount: likes.length, 
         liked, 
         addLike,
-        likes
       };
 }
 

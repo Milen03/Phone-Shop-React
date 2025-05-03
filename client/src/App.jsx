@@ -12,7 +12,7 @@ import Create from './components/create/Create.jsx'
 import Catalog from './components/catalog/Catalog.jsx'
 import Details from './components/details/Details.jsx'
 import Edit from './components/edit/Edit.jsx'
-import GuestGuard from './components/guards/guestGuard.jsx'
+import GuestGuard from './components/guards/GuestGuard'
 import AuthGuard from './components/guards/Authguard.jsx'
 import MyProfile from './components/my-profil/MyProfil.jsx'
 import Footer from './components/footer/Footer.jsx'
@@ -41,7 +41,7 @@ function App() {
           <Route path="/phone/catalog" element={<Catalog />} />
           <Route path="/phone/:phoneId/details" element={<Details />} />
 
-          <Route element={<GuestGuard />}>
+          <Route element={<GuestGuard/>}>
             <Route path="/phone/login" element={<Login />} />
             <Route path="/phone/register" element={<Register />} />
           </Route>
