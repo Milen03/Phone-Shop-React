@@ -4,7 +4,7 @@ import request from "../utils/request.js"
 
 
 
-const baseUrl = 'http://localhost:3030/data/phone'
+const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/phone`
 
 
 export const useCreateCar = () => {
