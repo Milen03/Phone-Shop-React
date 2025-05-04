@@ -70,8 +70,8 @@ export default function Nav() {
           <div className="flex items-center justify-between">
             <span className="text-white text-lg font-bold">Phone Shop</span>
             <div className="relative flex items-center">
-            <FaRegUserCircle className="w-10 h-6 text-white -ml-8" />
-            <p className='block text-base font-medium text-white '>{email}</p>
+           {email &&<FaRegUserCircle className="w-10 h-6 text-white -ml-8" /> }
+            <p className='block text-base font-medium text-white '>{email}</p> 
           </div>
             <button
               type="button"
