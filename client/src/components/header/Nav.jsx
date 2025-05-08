@@ -4,6 +4,7 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline'
 import { UserContext } from '../../context/userContext.js'
 import { FaRegUserCircle } from "react-icons/fa";
+import Clock from 'react-live-clock';
 
 
 
@@ -58,10 +59,11 @@ export default function Nav() {
           ))}
         </div>
          <div className="hidden lg:flex lg:flex-1 justify-end">
+        {!email && <Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/Sofia'}  />} 
           {email && <div className="relative flex items-center">
             <FaRegUserCircle className="w-6 h-6 text-white -ml-8" />
           </div>}
-          {email}
+          {email} 
         </div>
        
       </nav>
