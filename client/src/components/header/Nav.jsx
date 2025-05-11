@@ -38,7 +38,7 @@ export default function Nav() {
         <div className="flex lg:flex-1 items-center gap-2">
           <DevicePhoneMobileIcon className="w-6 h-6 text-cyan-400" />
           <Link to={'/'}>
-            <span className="text-lg font-bold text-white">Phone Shop</span>
+            <span className="text-lg font-bold text-white hover:text-cyan-400">Phone Shop</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -63,7 +63,7 @@ export default function Nav() {
           {email && <div className="relative flex items-center">
             <FaRegUserCircle className="w-6 h-6 text-white -ml-8" />
           </div>}
-          {email} 
+          <Link to={'/phone/my-profil'} className='hover:text-cyan-400'>{email}</Link>
         </div>
        
       </nav>
@@ -73,7 +73,9 @@ export default function Nav() {
             <span className="text-white text-lg font-bold">Phone Shop</span>
             <div className="relative flex items-center">
            {email &&<FaRegUserCircle className="w-10 h-6 text-white -ml-8" /> }
-            <Link to={'/phone/my-profil'} className='block text-base font-medium text-white '>{email}</Link> 
+            <Link to={'/phone/my-profil'} 
+            onClick={() => setMobileMenuOpen(false)}
+            className='block text-base font-medium text-white '>{email}</Link> 
           </div>
             <button
               type="button"
