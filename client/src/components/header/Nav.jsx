@@ -73,7 +73,7 @@ export default function Nav() {
             <span className="text-white text-lg font-bold">Phone Shop</span>
             <div className="relative flex items-center">
            {email &&<FaRegUserCircle className="w-10 h-6 text-white -ml-8" /> }
-            <p className='block text-base font-medium text-white '>{email}</p> 
+            <Link to={'/phone/my-profil'} className='block text-base font-medium text-white '>{email}</Link> 
           </div>
             <button
               type="button"
