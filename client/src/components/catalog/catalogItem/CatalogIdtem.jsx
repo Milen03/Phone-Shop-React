@@ -17,7 +17,7 @@ export default function CatalogItem ({
                 />
                 <h2 className="mt-4 text-xl text-gray-300">{brand} </h2>
                 <h3 className="mt-4 text-sm text-gray-300">{model}</h3>
-                <p className="mt-1 text-lg font-medium text-gray-300">{price}</p>
+                <p className="mt-1 text-lg font-medium text-gray-300">{price} LV</p>
               </Link>
         </>
     )
